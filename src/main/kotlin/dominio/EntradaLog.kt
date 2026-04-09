@@ -1,10 +1,9 @@
 package org.iesra.dominio
 
-enum class NivelLog {
-    INFO, WARNING, ERROR;
+import java.time.LocalDateTime
 
-    companion object {
-        fun desdeTexto(valor: String): NivelLog? =
-            entries.find { it.name == valor.uppercase() }
-    }
-}
+data class EntradaLog(
+    val fechaHora: LocalDateTime,
+    val nivel: NivelLog,
+    val mensaje: String
+)
